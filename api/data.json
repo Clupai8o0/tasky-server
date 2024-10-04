@@ -102,6 +102,18 @@
       ],
       "title": "Buying groceries",
       "username": "admin"
+    },
+    {
+      "description": "Buy toothbursh from woolies",
+      "due_date": "2024-09-25",
+      "priority": 1,
+      "start_date": "2024-09-24",
+      "status": 1,
+      "tags": [
+        "groceries"
+      ],
+      "title": "Buy toothbrush",
+      "username": "clupai"
     }
   ],
   "users": [
@@ -112,6 +124,14 @@
     {
       "password": "johndoe123",
       "username": "johndoe"
+    },
+    {
+      "password": "clupai",
+      "username": "clupai"
+    },
+    {
+      "password": "sit102",
+      "username": "sit102"
     }
   ]
 }

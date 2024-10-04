@@ -16,21 +16,19 @@ app.get("/", (req, res) => {
 
 // getting all tasks and users
 app.get("/get-data", (req, res) => {
-	const resp = fs.readFileSync(path.join(__dirname, "data.json"), "utf8");
-	const data = JSON.parse(resp);
-	res.json(data);
+	const resp = fs.readFileSync(path.join(__dirname, "data.json"), "utf8"); // reading data from data.json file
+	const data = JSON.parse(resp); // parsing data to JSON
+	res.json(data); // sending response
 });
 
 // updating tasks and users
 app.post("/save-data", (req, res) => {
-	if (!req.body) 
+	if (!req.body) // checking if request body is empty
 		return res.status(400).send("Request body is missing");
-	const data = {
-		...req.body
-	}
-	fs.writeFileSync(path.join(__dirname, "data.json"), JSON.stringify(data, null, 2));
-	res.send("Successfully saved data");
-})
+	const data = { ...req.body }; // copying request body to data
+	fs.writeFileSync(path.join(__dirname, "data.json"), JSON.stringify(data, null, 2)); // writing data to data.json file
+	res.send("Successfully saved data"); // sending response
+});
 
 // Start the server
 app.listen(port, () => {
